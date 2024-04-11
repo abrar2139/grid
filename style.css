@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 1700px;
+    width: 100%;
+    background-image: url("./sound/bgimg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 180px;
+    
+}
+.header{
+    background-color: transparent;
+}
+.pagination{
+    display: grid;
+    place-content: center;
+    grid-template-rows: repeat(1,40px);
+    grid-template-columns: repeat(3,50px);
+    gap: 1rem;
+    
+}
+.pagination .pagi{
+    color: greenyellow;
+    border: 2px solid greenyellow;
+    background-color:transparent;
+    /* width: 60px;
+    height: 60px; */
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: all .5s ease-in-out;
+}
+.pagination .pagi:hover{
+    background-color: greenyellow;
+    border: 2px solid brown;
+    color: brown;
+    font-weight: 900;
+}
+.pagination .page{
+    color: gray;
+}
+.pagination .prev.disabled, .pagination .next.disabled{
+  border: gray;
+  color: gray;
+  pointer-events: none;
+}
+.herosection .hero-child.hide{
+    display: none;
+}
+.herosection .hero-child.show{
+    display: block;
+    animation:show .8s ease ;
+}
+@keyframes show {
+    0%{
+opacity: 0;
+transform: scale(0.9);
+    }
+    100%{
+     opacity: 1;
+     transform: scale(1);
+    }
+}
+.top-nav{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
+    background-color:transparent;
+    column-gap: 0rem;
+    margin-bottom: 80px;
+    
+}
+.grid{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: brown;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 5px;
+    margin-bottom: 2px;
+    place-items: center;
+}
+.nav3{
+    padding: 10px !important;
+}
+/* .grid:hover{
+    
+} */
+.grid a{
+    text-decoration: none;
+    color: brown;
+}
+.grid .words, .grid i{
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.grid .words:hover, .grid i:hover{
+    color: greenyellow;
+    box-shadow: 0 0 10px 5px brown,
+    0 0 20px 7px silver,
+    0 0 25px 20px greenyellow,
+    0 0 30px 25px brown;
+    
+}
+.grid .words:hover, .grid i:hover{
+    color: greenyellow;
+
+}
+/* .header img{
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+
+/* 
+.gallery-items .item.hide{
+    display: none;
+}
+.gallery-items .item.show{
+    display: block;
+    animation:show .5s ease ;
+}
+@keyframes show {
+    0%{
+opacity: 0;
+transform: scale(0.9);
+    }
+    100%{
+     opacity: 1;
+     transform: scale(1);
+    }
+}
+
+ */
+
+
+
+.herosection{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    display: grid;
+    gap: .5rem;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(1,1fr);
+   
+}
+.hero-child{
+    background-color: blue;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+.hero-child:hover{
+    
+    transform: scale(1.1);
+    z-index: 10;
+}
+.hero-child img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+/* .hero2 img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+.hero1 img{
+   object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+} */
+
+
+@media (min-width:768px) {
+    body{
+        height: 1500px;
+        padding-bottom: 100px;
+    }
+    .grid{
+        padding: 0;
+        margin-bottom: 0;
+        place-items: end;
+    }
+    .nav3{
+        padding: 0px !important;
+    }
+    .top-nav{
+
+        grid-template-rows: repeat(1,1fr) !important;
+        grid-template-columns: repeat(3,1fr) !important;
+        column-gap: 1rem !important;
+        margin-bottom: 0;
+    }
+    .herosection{
+       
+        grid-template-rows: repeat(4,1fr);
+        grid-template-columns: repeat(3,1fr);
+       
+    }
+    .hero1, .hero6 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .hero2{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    }
+    .hero3{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        }
+}
